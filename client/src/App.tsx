@@ -1,8 +1,8 @@
 import {
   BrowserRouter as Router,
   Switch,
-  Route
-} from "react-router-dom";
+  Route,
+} from 'react-router-dom';
 
 import Home from 'pages/Home';
 import ItemDetails from 'pages/ItemDetails';
@@ -15,7 +15,7 @@ export default function BasicExample() {
     <Router>
       <>
         <SearchBar />
-        <main id='root-app'>
+        <main id="root-app">
           <Switch>
             <Route exact path="/">
               <Home />
