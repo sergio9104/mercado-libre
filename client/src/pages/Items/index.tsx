@@ -14,6 +14,7 @@ export default function Items() {
     const query = useQuery().get('search');
 
     useEffect(() => {
+        setLoading(true);
         ItemsService(query).then((value) => {
             setItems(value.items);
             setBreadcumbs(value.categories);
