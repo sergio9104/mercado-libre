@@ -16,7 +16,6 @@ export default function ItemCard({
             {price.currency}
             {' '}
             {price.amount}
-            {price.decimals}
             {' '}
 
           </span>
