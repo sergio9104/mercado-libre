@@ -1,3 +1,9 @@
+# Mercado Libre Front End Test
+
+## Install
+
+Run `npm i` in main and client folders
+
 ## Available Scripts
 
 In the project directory, you can run:
