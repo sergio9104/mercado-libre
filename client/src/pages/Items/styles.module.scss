@@ -1,0 +1,18 @@
+@import 'assets/scss/utilities/variables.module.scss';
+@import 'assets/scss/utilities/mixins.module.scss';
+
+.content {
+    @include grid;
+}
+
+.wrapper {
+    background-color: $white;
+    list-style: none;
+    grid-column: 2 / 12;
+    padding: 0;
+    margin: 16px 0;
+
+    li:last-child > div{
+        border-bottom: none;
+    }
+}

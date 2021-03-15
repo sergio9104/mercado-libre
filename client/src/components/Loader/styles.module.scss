@@ -1,0 +1,23 @@
+@import 'assets/scss/utilities/variables.module.scss';
+
+.content {
+    align-items: center;
+    display: flex;
+    height: calc(100vh - 40px);
+    justify-content: center;
+    width: 100vw;
+}
+
+.loader {
+    animation: spin 2s linear infinite;
+    border-radius: 50%;
+    border: 16px solid $gray2;
+    border-top: 16px solid $blue;
+    height: 120px;
+    width: 120px;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

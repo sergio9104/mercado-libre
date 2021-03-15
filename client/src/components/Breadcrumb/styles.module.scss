@@ -1,0 +1,13 @@
+@import 'assets/scss/utilities/variables.module.scss';
+@import 'assets/scss/utilities/mixins.module.scss';
+
+.content {
+    @include grid(12);
+}
+
+.wrapper {
+    color: $gray2;
+    font-size: 14px;
+    grid-column: 2 / 12;
+    margin-top: 12px;
+}

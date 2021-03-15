@@ -1,0 +1,42 @@
+@import 'assets/scss/utilities/variables.module.scss';
+@import 'assets/scss/utilities/mixins.module.scss';
+
+$smallSize: 16px;
+$bigSize: 32px;
+
+.content {
+    border-bottom: solid 1px $gray3;
+    display: flex;
+    margin: 0 $smallSize;
+    padding: $smallSize 0;
+}
+
+.image {
+    border-radius: 4px;
+    height: 180px;
+    margin-right: $smallSize;
+    object-fit: contain;
+    width: 180px;
+}
+
+.description {
+    margin-top: $bigSize;
+    width: 60%;
+}
+
+.price {
+    font-size: 24px;
+    margin-bottom: $bigSize;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.ciudad {
+    margin-left: auto;
+    width: 20%;
+    margin-top: $bigSize;
+    font-size: 12px;
+}

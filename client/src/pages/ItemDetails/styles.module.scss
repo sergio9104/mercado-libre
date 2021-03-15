@@ -1,0 +1,78 @@
+@import 'assets/scss/utilities/variables.module.scss';
+@import 'assets/scss/utilities/mixins.module.scss';
+
+$smallSize: 16px;
+$bigSize: 32px;
+
+.content {
+    @include grid;
+}
+
+.wrapper {
+    grid-column: 2 / 12;
+    background-color: $white;
+    display: flex;
+    margin-top: $smallSize;
+    padding: $bigSize;
+    flex-wrap: wrap;
+}
+
+.left {
+    width: 65%;
+    min-width:  680px;
+    margin-right: 20px;
+}
+
+.right {
+    width: 33%;
+}
+
+.picture{
+    width: 680px;
+    object-fit: contain;
+    margin-bottom: $bigSize;
+}
+
+.title {
+    font-size: 28px;
+    margin-bottom: $bigSize;
+}
+
+.descriptionText {
+    font-size: $smallSize;
+    margin-top: $bigSize;
+}
+
+.quantity {
+    font-size: 14px;
+    margin-top: $bigSize;
+    margin-bottom: $smallSize;
+}
+
+.name {
+    margin: 0 0 $bigSize 0;
+    font-size: 24px;
+}
+
+.price {
+    font-size: 46px;
+    margin-bottom: $bigSize;
+}
+
+.decimal {
+    font-size: 23px;
+    position: relative;
+    bottom: 15px;
+}
+
+.buy {
+    width: 100%;
+    background-color: #3483FA;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    padding: 20px 0;
+    font-size: 24px;
+    cursor: pointer;
+    outline: none;
+}
