@@ -5,7 +5,7 @@
   "main": "dist/app.js",
   "scripts": {
     "client": "cd client && npm start",
-    "server": "tsc && nodemon dist/index.js",
+    "server": "tsc && node dist/index.js",
     "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "test": "jest --config ./jest.config.json",
     "test:watch": "npm run test -- --watch"
