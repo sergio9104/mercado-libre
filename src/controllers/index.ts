@@ -5,7 +5,8 @@ import Detail from "interfaces/detail.interface";
 class ItemsController {
     async getItems(param: any): Promise<Items> {
         try {
-            const itemsData =  await Api.items(param);
+            const itemsData =  await Api.items(param)
+            .catch((err) => console.error(err));
             const author = {
                 name: 'Sergio',
                 lastname: 'Valencia'
@@ -18,7 +19,7 @@ class ItemsController {
                         return value.name;
                     });
                 } catch (err) {
-                    console.error(err);
+                    console.error('Not exist categories for this search');
                     return([]);
                 }  
         }
@@ -62,8 +63,10 @@ class ItemsController {
     
     async getDetail(param: any): Promise<Detail>{
         try {                
-            const itemsDetail =  await Api.itemDetail(param);
-            const itemsDescription =  await Api.itemDescription(param);
+            const itemsDetail =  await Api.itemDetail(param)
+            .catch((err) => console.error(err));
+            const itemsDescription =  await Api.itemDescription(param)
+            .catch((err) => console.error(err));
             const itemsDetailData = itemsDetail.data;
             const itemsDescriptionData = itemsDescription.data;
 

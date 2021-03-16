@@ -29,6 +29,9 @@ export default function BasicExample() {
             <Route path="*">
               <NoFound />
             </Route>
+            <Route path="/error">
+              <NoFound />
+            </Route>
           </Switch>
         </main>
       </>

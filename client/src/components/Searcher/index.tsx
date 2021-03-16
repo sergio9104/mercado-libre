@@ -14,7 +14,7 @@ export default function Searcher() {
 
   function submit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    history.push(`/items?search=${inputValue}`);
+    if (inputValue) history.push(`/items?search=${inputValue}`);
   }
 
   return (

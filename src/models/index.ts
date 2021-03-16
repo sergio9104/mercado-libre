@@ -6,16 +6,28 @@ class Search {
         this.api = 'https://api.mercadolibre.com'; 
     }
 
-    async items(search){
-        return await axios.get(`${this.api}/sites/MLA/search?q=${search}`);
+    async items(search): Promise<any> {
+        return await axios
+        .get(`${this.api}/sites/MLA/search?q=${search}`)
+        .catch((err) => {
+            console.error(err);
+        });
     }
 
-    async itemDetail(id) {
-        return await axios.get(`${this.api}/items/${id}`);
+    async itemDetail(id): Promise<any> {
+        return await axios
+        .get(`${this.api}/items/${id}`)
+        .catch((err) => {
+            console.error(err);
+        });;
     }
 
-    async itemDescription(id) {
-        return await axios.get(`${this.api}/items/${id}/description`);
+    async itemDescription(id): Promise<any> {
+        return await axios
+        .get(`${this.api}/items/${id}/description`)
+        .catch((err) => {
+            console.error(err);
+        });
     }
 }
 

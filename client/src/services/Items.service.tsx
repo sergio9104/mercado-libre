@@ -1,5 +1,9 @@
 import Props from 'pages/Items/items.interface';
 
-export default async function ItemsService(search: string | null): Promise<Props> {
-  return await fetch(`/items?q=${search}`).then((response) => response.json());
+export default function ItemsService(search: string | null): Promise<Props> {
+  return fetch(`/items?q=${search}`)
+  .then((response) => response.json())
+  .catch((err) => {
+    console.error(err);
+  });
 }

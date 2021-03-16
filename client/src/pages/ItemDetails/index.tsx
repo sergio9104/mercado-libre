@@ -1,6 +1,6 @@
 import Loader from 'components/Loader';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import ItemService from 'services/Item.service';
 import Props from './itemDetails.interface';
 import styles from './styles.module.scss';
@@ -9,13 +9,18 @@ export default function ItemDetails() {
   const [detail, setDetail] = useState<Props['item']>();
   const [loading, setLoading] = useState<boolean>(true);
   const { id } = useParams<{id: string}>();
+  const history = useHistory();
 
   useEffect(() => {
-    ItemService(id).then((value) => {
-      setDetail(value.item);
-      setLoading(false);
-    });
-  }, [id]);
+    if (id) {
+      ItemService(id).then((value) => {
+        setDetail(value.item);
+        setLoading(false);
+      }, () => {
+        history.push(`/error`);
+      });
+    }
+  }, [id, history]);
 
   if (detail && !loading) {
     return (

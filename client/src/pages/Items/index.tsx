@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import Breadcumb from 'components/Breadcrumb';
 import ItemCard from 'components/ItemCard';
 import ItemsService from 'services/Items.service';
@@ -12,15 +13,21 @@ export default function Items() {
   const [breadcumbs, setBreadcumbs] = useState<Props['categories']>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const query = useQuery().get('search');
+  const history = useHistory();
 
   useEffect(() => {
-    setLoading(true);
-    ItemsService(query).then((value) => {
-      setItems(value.items);
-      setBreadcumbs(value.categories);
-      setLoading(false);
-    });
-  }, [query]);
+    if(query){
+      setLoading(true);
+      ItemsService(query).then((value) => {
+        setItems(value.items);
+        setBreadcumbs(value.categories);
+        setLoading(false);
+      }, ()  => {
+        history.push(`/error`);
+      });
+    }
+    
+  }, [query, history]);
 
   if (items.length > 0 && !loading) {
     return (
