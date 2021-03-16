@@ -26,10 +26,10 @@ export default function BasicExample() {
             <Route path="/items">
               <Items />
             </Route>
-            <Route path="*">
+            <Route path="/error">
               <NoFound />
             </Route>
-            <Route path="/error">
+            <Route path="*">
               <NoFound />
             </Route>
           </Switch>
